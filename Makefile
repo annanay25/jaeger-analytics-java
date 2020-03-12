@@ -43,7 +43,8 @@ JAEGER_DOCKER_PROTOBUF=jaegertracing/protobuf:0.1.0
 PROTOC := docker run --rm -u ${shell id -u} -v${PWD}:${PWD} -w${PWD} ${JAEGER_DOCKER_PROTOBUF} --proto_path=${PWD}
 PROTO_INCLUDES := \
 	-Iprotodef \
-	-I/usr/include/github.com/gogo/protobuf
+	-I/usr/include/github.com/gogo/protobuf \
+	-I/usr/include/github.com
 
 .PHONY: proto
 proto:
